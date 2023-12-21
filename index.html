@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car for Rent</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    .navigation{
+        background-color: rgba(128, 128, 128, 0.224);
+        position: fixed;
+    }
+    img.mr {
+        height: 60px;
+    }
+    #bb {
+        border-bottom: 3px solid rgba(128, 128, 128, 0);
+    }
+    #bb:hover,#bb.active{
+        border-bottom: 3px solid rgb(255, 98, 0);
+    }
+    #bb a.nav-link:hover, .navbar-nav .nav-link.active {
+        color: rgb(255, 98, 0) !important;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .logo-area{
+        width: 25%!important;
+    }
+    .navbar-nav {
+        width: 100%;
+    }
+    #hover {
+        border: 1px solid rgb(255, 98, 0);
+        float: left;
+        padding: 11px 22px;
+        color: #fff!important;
+        background: rgb(255, 98, 0);
+        text-transform: capitalize;
+        letter-spacing: 0.6px;
+    }
+    li.right-btn {
+        margin-left: auto !important;
+    }
+    #hover:hover  {
+        background: #fff;
+        color: rgb(255, 98, 0) !important;
+        border: 1px solid rgb(255, 98, 0);
+    }
+    .banner-area{
+        background-color: rgba(128, 128, 128, 0.124);
+        padding-top: 110px;
+    }
+    .banner-text{
+        max-width: 350px;
+        padding-top: 150px;
+        padding-left: 30px;
+    }
+    .banner-text h1{
+        font-size: 60px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        line-height: 80px;
+    }
+    .banner-text span{
+        color: rgb(255, 98, 0);
+    }
+    .container {
+        width: 100%;
+        max-width: 1170px;
+    }
+    .color1 {
+        background-image: url(img/Car\ Website1@222.png);
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 586px;
+    }
+    .Ride{
+        text-align: center;
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+    .Ride p{
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .Ride h2{
+        font-weight: 700;
+        font-size: 35px;
+    }
+    .section{
+        background-color: rgba(255, 98, 0, 0.14);
+    }
+    .rent p{
+        /* max-width: 250px; */
+        text-align: center;
+        padding: 10px;
+    }
+    .rent i{
+        margin-top: 50px;
+        font-size: 30px;
+        border: 3px solid rgb(255, 98, 0);
+        border-radius: 50px;
+        color: rgb(255, 98, 0);
+        width: 60px;
+        height: 60px;
+        line-height: 40px;
+    }
+    .rent h5{
+        margin: 20px;
+    }
+    .Service1{
+        background-color: #fff;
+    }
+    .Service{
+        margin: auto;
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+    .Service p{
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .Service h2{
+        font-weight: 700;
+        font-size: 35px;
+        max-width: 400px;
+        margin: auto;
+        padding-bottom: 30px;
+    }
+    .part{
+        background-color: rgba(255, 98, 0, 0.14);
+        border-radius: 10px;
+        height: 400px;
+        padding-left: 12px;
+    }
+    .part img{
+        width: 350px;
+        height: 230px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    .model{
+        margin: 10px 5px;
+        border: 1px solid rgba(128, 128, 128, 0.873);
+        width: 54px;
+        padding: 4px 9px;
+        border-radius: 6px;
+        font-size: 14px !important;
+        color: rgba(128, 128, 128, 0.858);
+    }
+    .part h6{
+        font-size: 22px;
+        margin: 7px 5px;
+    }
+    .price{
+        color: rgb(255, 98, 0);
+        font-size: 17px !important;
+        margin: 10px 5px;
+    }
+    .part span{
+        color: rgba(128, 128, 128, 0.873);
+        font-size: 14px;
+    }
+    .part a{
+        background-color: rgb(255, 98, 0);
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 139px;
+        border-radius: 6px;
+    }
+    .about{
+        color: rgb(255, 98, 0);
+    }
+    .cir{
+        border-radius: 50%;
+    }
+    #About{
+        padding-top: 200px;
+    }
+    .but{
+        background-color: rgb(255, 98, 0);
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+    }
+    .btn-floating {
+        border-radius: 50%;
+        background-color: rgb(255, 98, 0);
+        color: #fff;     
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="container-fluid navigation">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand logo-area" href="#"><img class="mr mr-3 object-fit-cover" src="img/jeep.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item m-3">
+                <a class="nav-link active fs-7 fw-bold text-dark" id="bb" href="#">Home</a>
+              </li>
+              <li class="nav-item m-3" id="bb">
+                <a class="nav-link fs-7 fw-bold text-dark" href="#Ride">Ride</a>
+              </li>
+              <li class="nav-item m-3" id="bb">
+                <a class="nav-link fs-7 fw-bold text-dark" href="#Service">Services</a>
+              </li>
+              <li class="nav-item m-3" id="bb">
+                <a class="nav-link fs-7 fw-bold text-dark" href="#About">About</a>
+              </li>
+              <li class="nav-item m-3" id="bb">
+                <a class="nav-link fs-7 fw-bold text-dark" href="#Review">Reviews</a>
+              </li>
+              <li class="nav-item right-btn pt-3">
+                <a class="nav-link fs-7 fw-bold  active rounded" id="hover" href="#Contact">Contact Us</a>
+            </li>
+            </ul>
+          </div>
+
+        </nav>
+       
+      </div>
+    </div>
+  </header>
+
+  <section class="container-fluid banner-area">
+    <div class="container">
+      <div class="row">
+      
+          <div class="col-sm-6">
+              <div class="banner-text">
+                <h1><span>Looking</span> to rent a car</h1>
+                <p class="py-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit hic modi optio.</p>
+                      <img src="img/512x512.png"  width="150px" height="50px">
+                      <img src="img/ios.png" width="150px" height="50px">
+              </div>
+          </div>
+
+          <div class="col-sm-6 color1">
+            <div class="banner-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid section pt-3" id="Ride">
+    <div class="container Ride">
+      <P>HOW ITS WORK</P>
+      <h2>Rent With 3 Easy Steps</h2>
+
+      <div class="row">
+        <div class="col-sm-4 rent">
+          <i class="fa-solid fa-location-dot p-2"></i>
+          <h5>Choose A Location</h5>
+          <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores accusantium corporis, harum fuga consectetur deleniti doloremque sint dolore veniam quisquam.</P>
+        </div>
+        <div class="col-sm-4 rent">
+          <i class="fa-solid fa-calendar-check p-2"></i>
+          <h5>Pick-Up Date</h5>
+          <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores accusantium corporis, harum fuga consectetur deleniti doloremque sint dolore veniam quisquam.</P>
+        </div>
+        <div class="col-sm-4 rent">
+          <i class="fa-solid fa-car p-2"></i>
+          <h5>Book A Car</h5>
+          <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores accusantium corporis, harum fuga consectetur deleniti doloremque sint dolore veniam quisquam.</P>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-fluid Service1 " id="Service">
+    <div class="container Service">
+      <p class="text-center">BEST Services</p>
+      <h2>Explore Out Top Deals From Top Rated Dealers</h2>
+
+      <div class="row">
+
+        <div class="col-lg-4">
+          <div class="part">
+            <img src="img/car-7.jpg">
+            <P class="model">2022</P>
+            <h6>Lamborghini SVJ 63</h6>
+            <p class="price">$6948 | $579 <span>/month</span></p>
+            <a href="#">Rent Now</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="part">
+            <img src="img/car-1.jpg">
+            <P class="model">2023</P>
+            <h6>Lamborghini Huracan</h6>
+            <p class="price">$6660 | $555 <span>/month</span></p>
+            <a href="#">Rent Now</a>
+        </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="part">
+            <img src="img/car-3.jpg">
+            <P class="model">2021</P>
+            <h6>Lamborghini Urus</h6>
+            <p class="price">$6132 | $511 <span>/month</span></p>
+            <a href="#">Rent Now</a>
+        </div>
+        </div>
+
+      </div>
+
+      <div class="row py-2">
+
+        <div class="col-sm-4">
+          <div class="part">
+            <img src="img/bmw.jpg">
+            <P class="model">2023</P>
+            <h6>BMW X4</h6>
+            <p class="price">$4284 | $357 <span>/month</span></p>
+            <a href="#">Rent Now</a>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="part">
+            <img src="img/car-5.jpg">
+            <P class="model">2021</P>
+            <h6>LaFerrari</h6>
+            <p class="price">$5472 | $456 <span>/month</span></p>
+            <a href="#">Rent Now</a>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="part">
+            <img src="img/car-4.jpg">
+            <P class="model">2020</P>
+            <h6>Porche 911 Boxster</h6>
+            <p class="price">$3876 | $323 <span>/month</span></p>
+            <a href="#">Rent Now</a>
+          </div>
+        </div>
+
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section class="container-fluid mb-5" id="About">
+    <div class="container">
+      <div class="row">
+          <!-- Image Section -->
+          <div class="col-md-6">
+              <img src="img/about.png" alt="" class="img-fluid"> 
+          </div>
+
+          <!-- Text Section -->
+          <div class="col-md-6">
+              <h2 class="about">ABOUT US</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quia quam numquam placeat id ratione sed aut nostrum? Aperiam provident ipsam fuga dolores iste quaerat sunt repellat delectus minima! Similique, alias aut, inventore, totam ratione exercitationem autem vel suscipit reiciendis aliquid iste dolorem soluta a hic accusamus quaerat natus eligendi?</p>
+              <br>
+              <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt fugiat quidem magnam error placeat, ad quas!</P>
+              <button type="button" class="btn btn-primary">Learn More</button>
+          </div>
+      </div>
+    </div>
+</section>
+
+  <section class="container pt-5 mb-5" id="Review">
+    <div class="container">
+      <div class="row mt-5">
+        <p class="text-center m-0">REVIEWS</p>
+        <h2 class="text-center fw-bold mb-5">Whats Our Customer Say</h2>
+        <!-- Review 1 -->
+        <div class="col-md-4 text-center">
+            <img src="img/mark.jpg" alt="" class="cir mb-3" width=100 height=100>
+            <h5>Mark Bob</h5>
+            <!-- Star Ratings -->
+            ★★★★☆
+            <!-- Review Text -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores sint nesciunt perferendis. Vero temporibus aperiam debitis eligendi quo optio?</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="col-md-4 text-center">
+            <img src="img/lilly.jpg" alt="" class="cir mb-3" width=100 height=100>
+            <h5>Lilly Adam</h5>
+            ★★★★☆
+            <!-- Review Text -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores sint nesciunt perferendis. Vero temporibus aperiam debitis eligendi quo optio?</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="col-md-4 text-center">
+            <img src="img/jon.jpg" alt="" class="cir mb-3" width=100 height=100>
+            <h5>Jon Snow</h5>
+            ★★★★☆
+            <!-- Review Text -->
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores sint nesciunt perferendis. Vero temporibus aperiam debitis eligendi quo optio?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-5 pt-5" id="Contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="text-white mb-4">Contact Us</h5>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label text-white">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label text-white">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label text-white">Message</label>
+              <textarea class="form-control" id="message" rows="3" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="button" class="btn but" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Send Message
+            </button>
+          </form>
+        </div>
+  
+        <div class="col-md-4 mb-4">
+          <h5 class="text-white mb-4">Quick Links</h5>
+          <ul class="list-unstyled text-white">
+            <li><a href="#">Home</a></li>
+            <li><a href="#Ride">Ride</a></li>
+            <li><a href="#Service">Services</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Review">Reviews</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-4 mb-4">
+          <h5 class="text-white mb-4">Follow Us</h5>
+          <a href="#" class="btn btn-floating m-1"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-floating m-1"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn btn-floating m-1"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="btn btn-floating m-1"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container text-center text-white mt-4 py-3">
+      <p>&copy; 2023 Car Rental. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Your Message Submited Successfully</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Our Team Will Contact You Soon On Your Email.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
